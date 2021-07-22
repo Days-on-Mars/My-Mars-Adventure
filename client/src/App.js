@@ -1,12 +1,24 @@
 import './App.css';
 import axios from 'axios';
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import MarsPage from './components/MarsPage';
+import Signup from './components/Signup';
+import Login from './components/Login';
 
 
 class App extends React.Component {
+  state = {
+    user: this.props.user
+  }
+
+  setUser = user => {
+    this.setState({
+      user: user
+    })
+  }
+
   render() {
     return (
       <>
@@ -15,7 +27,25 @@ class App extends React.Component {
         {/*<Route exact path ={'/beers'} render={() => {
               return <beers beerData={this.state.beers}/>
             }} /> */}
-         <Route exact path ={'/Mars-Journal'} component={MarsPage} /> 
+        <Route
+          exact path='/sign-up'
+          render={props => <Signup setUser={this.setUser} {...props} />}
+        />
+        <Route
+          exact
+          path='/log-in'
+          render={(props) => <Login setUser={this.setUser} {...props}/>}
+        />
+         <Route exact path ={'/mars-journal'} render={props => {
+            if (this.state.user) return <MarsPage {...props}/>
+            else return <Redirect to='/' />
+          }}
+          /> 
+          {/*<Route exact path ={'/dashboard'} render={props => {
+            if (this.state.user) return <Dashboard {...props}/>
+            else return <Redirect to='/' />
+          }}
+          />*/}
         </Switch>
         </BrowserRouter>
       </>
