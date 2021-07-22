@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { render } from '@testing-library/react';
+import MarsPage from './components/MarsPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <BrowserRouter>
+          <Switch>
+        {/*<Route exact path ={'/beers'} render={() => {
+              return <beers beerData={this.state.beers}/>
+            }} /> */}
+         <Route exact path ={'/Mars-Journal'} component={MarsPage} /> 
+        </Switch>
+        </BrowserRouter>
+      </>
+    );
+  }
+  }
+  export default App;
