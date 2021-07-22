@@ -1,0 +1,12 @@
+.navLinks {
+	text-decoration: none;
+	color: black;
+}
+
+.navbar ul {
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-color: rosybrown;
+}
