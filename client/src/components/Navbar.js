@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import DynamicNavbar from "dynamic-react-navlinks";
 import { logout } from "../services/auth";
+import Signup from "./Signup";
+import Login from "./Login";
 import "./Navbar.css";
 
 export default function Navbar(props) {
@@ -21,28 +23,42 @@ export default function Navbar(props) {
 						Home
 					</Link>
 				</li>
-
-				<li>
-					<Link to="/mars-journal" className="navLinks">
-						Mars Journal
-					</Link>
-				</li>
-
-				<li>
-					<Link to="/dashboard" className="navLinks">
-						Dashboard
-					</Link>
-				</li>
-
-				<li>
-					<Link
-						to="/log-out"
-						onClick={() => handleLogout()}
-						className="navLinks"
-					>
-						Logout
-					</Link>
-				</li>
+				{props.user ? (
+					<>
+						<li>
+							<Link to="/mars-journal" className="navLinks">
+								Mars Journal
+							</Link>
+						</li>
+						<li>
+							<Link to="/dashboard" className="navLinks">
+								Dashboard
+							</Link>
+						</li>
+						<li>
+							<Link
+								to="/log-out"
+								onClick={() => handleLogout()}
+								className="navLinks"
+							>
+								Logout
+							</Link>
+						</li>
+					</>
+				) : (
+					<>
+						<li>
+							<Link to="/sign-up" className="navLinks">
+								Signup
+							</Link>
+						</li>
+						<li>
+							<Link to="/log-in" className="navLinks">
+								Login
+							</Link>
+						</li>
+					</>
+				)}
 			</ul>
 		</nav>
 	);

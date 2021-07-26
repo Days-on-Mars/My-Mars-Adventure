@@ -22,7 +22,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<>
-				<Navbar />
+				<Navbar user={this.state.user} setUser={this.setUser} />
 				<BrowserRouter>
 					<Switch>
 						{/*<Route exact path ={'/beers'} render={() => {
