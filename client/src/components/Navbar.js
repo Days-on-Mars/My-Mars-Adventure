@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import DynamicNavbar from "dynamic-react-navlinks";
 import { logout } from "../services/auth";
-import Signup from "./Signup";
-import Login from "./Login";
 import "./Navbar.css";
 
 export default function Navbar(props) {
