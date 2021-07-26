@@ -21,7 +21,7 @@ export default class MarsPage extends Component {
 	}
 
     getWeatherData = () => {
-		axios.get('https://api.nasa.gov/DONKI/FLR?startDate=2021-07-01&endDate=2021-07-20&api_key=rWoTXXeBvjPqFXL8VgQVicRTI2BLUNTmRdpbPOke&feedtype=json&ver=1.0')
+		axios.get('https://api.nasa.gov/DONKI/FLR?startDate=2021-07-10&endDate=2021-07-22&api_key=rWoTXXeBvjPqFXL8VgQVicRTI2BLUNTmRdpbPOke&feedtype=json&ver=1.0')
 			.then(response => {
 				console.log("2nd checking weather api returning data:", response);
 				this.setState({
@@ -39,11 +39,30 @@ export default class MarsPage extends Component {
 
 
     render() {
+
         const { apod } = this.state
         return (
             <div>
                 <h2>test</h2>
                 <img src = {apod} />
+
+        const  picture  = this.state.apod;
+        const  solar  = this.state.weather;
+        console.log('3rd checking solar variable:', solar)
+        return (
+            <div>
+                <h2>Mars Life of User XYZ</h2>
+                <p>Welcome back, dear fellow Martian. As one of the first humans migrated to Mars, your journals are extremely valuable for the future generations to come.</p>
+                <img src = {picture} style={{width: '600px'}} alt='space photo'></img>
+                <h4>Attention, solar activities, plan your day accordingly</h4>
+                {solar.map(elm =>
+                <div key={elm.flrID}>
+                <p>Solar flare started at {elm.beginTime}, ended at {elm.endTime}.</p>
+                </div>
+                )}
+                <p>Time recorded using Earth time. Disruption to data could occur due to space weather activities</p>
+                <h2>place holder for journal entry</h2>
+
             </div>
         )
     }
