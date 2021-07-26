@@ -5,8 +5,13 @@ import './HomePage.css'
 export default class HomePage extends Component {
     render() {
         return (
-            <div>
-
+            <div style={{ 
+                        backgroundImage: "url(/blue-dunes-mars.png)",
+                        width: '100', height: '100',
+                        backgroundSize: 'cover', 
+                        backgroundPosition: 'center center',
+                        backgroundRepeat: 'no-repeat',
+                        }}>
                 <h1><b>Days on Mars</b></h1>
 
                 <b>Martian: </b>

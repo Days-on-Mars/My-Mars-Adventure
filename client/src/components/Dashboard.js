@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import './Dashboard.css'
+import React, { Component } from 'react';
+import './Dashboard.css';
+import axios from 'axios'
 
 export default class Dashboard extends Component {
 
@@ -12,15 +13,22 @@ export default class Dashboard extends Component {
         year: 'all'
       }
     
-    //   handleInputChange = e => {
-    //     const target = e.target;
-    //     const value = target.type === 'checkbox' ? target.checked : target.value;
-    //     const name = target.name;
+      handleInputChange = e => {
+        const target = e.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
     
-    //     this.setState({
-    //       [name]: value
-    //     });
-    //   }
+        this.setState({
+          [name]: value
+        });
+      }
+
+      componentDidMount() {
+		axios.get('/mars-journal')
+        .then((result) => {
+            console.log('result', result);
+        })
+    }
 
     render() {
         return (
@@ -46,12 +54,16 @@ export default class Dashboard extends Component {
             </label>
 
             <label>
-            Task
+             Task
               <input
                 name="task"
                 type="checkbox"
                 checked={this.state.task}/>
             </label>
+
+            <div>
+            </div>
+
             </div>
         )
     }
