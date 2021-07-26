@@ -1,0 +1,34 @@
+body {
+	background-image: url("https://media.giphy.com/media/l0MYJAzu5RTVSGeiY/giphy.gif");
+	background-size: cover;
+
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+}
+
+.loginForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: rgb(221, 189, 253);
+	font-family: "Tourney", cursive;
+	font-size: 2rem;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn {
+	margin: 30px;
+	padding: 20px;
+	font-family: "Tourney", cursive;
+	font-size: 1.5rem;
+	border-radius: 5%;
+	background-color: rgb(37, 5, 63);
+	color: white;
+	border-style: solid;
+}
