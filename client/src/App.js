@@ -4,6 +4,10 @@ import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import MarsPage from './components/MarsPage';
+
+import HomePage from './components/HomePage';
+import Dashboard from './components/Dashboard';
+
 import Signup from './components/Signup';
 import Login from './components/Login';
 
@@ -27,6 +31,11 @@ class App extends React.Component {
         {/*<Route exact path ={'/beers'} render={() => {
               return <beers beerData={this.state.beers}/>
             }} /> */}
+
+          <Route exact path ={'/'} component={HomePage} /> 
+          <Route exact path ={'/dashboard'} component={Dashboard} /> 
+         <Route exact path ={'/Mars-Journal'} component={MarsPage} /> 
+
         <Route
           exact path='/sign-up'
           render={props => <Signup setUser={this.setUser} {...props} />}
@@ -46,6 +55,7 @@ class App extends React.Component {
             else return <Redirect to='/' />
           }}
           />*/}
+
         </Switch>
         </BrowserRouter>
       </>

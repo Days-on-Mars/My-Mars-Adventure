@@ -39,6 +39,13 @@ export default class MarsPage extends Component {
 
 
     render() {
+
+        const { apod } = this.state
+        return (
+            <div>
+                <h2>test</h2>
+                <img src = {apod} />
+
         const  picture  = this.state.apod;
         const  solar  = this.state.weather;
         console.log('3rd checking solar variable:', solar)
@@ -55,6 +62,7 @@ export default class MarsPage extends Component {
                 )}
                 <p>Time recorded using Earth time. Disruption to data could occur due to space weather activities</p>
                 <h2>place holder for journal entry</h2>
+
             </div>
         )
     }
