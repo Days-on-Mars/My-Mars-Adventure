@@ -34,10 +34,13 @@ app.use(
 
 // passport configuration
 // http://www.passportjs.org/docs/configure/
-const User = require("./models/User");
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
-const bcrypt = require("bcrypt");
+
+const User = require('./models/User');
+const UserInput = require('./models/UserInput')
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcrypt');
+
 
 // this method is used by passport to put the id of the user into the session
 passport.serializeUser((user, done) => {
