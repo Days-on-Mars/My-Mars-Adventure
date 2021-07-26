@@ -32,7 +32,14 @@ export default class Dashboard extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{ 
+              backgroundImage: "url(/rust-dunes.png)",
+              backgroundSize: 'cover', 
+              backgroundPosition: 'center center',
+              backgroundRepeat: 'no-repeat',
+              height: '100vh',
+              width: '100vw'
+              }}>
                 <h1><b></b></h1>
                 <p>Search archived Days on Mars journal entries and tasks</p>
 
