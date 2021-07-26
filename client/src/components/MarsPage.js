@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+// import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 //const toDo = [oneToDo, twoToDo, threeToDo, fourToDo, fiveToDo, sixToDo, sevenToDo, eightToDo, nineToDo, tenToDo]
 export default class MarsPage extends Component {
@@ -126,13 +126,7 @@ export default class MarsPage extends Component {
 
 
     render() {
-<<<<<<< HEAD
         const { apod } = this.state
-        return (
-            <div>
-                <h2>test</h2>
-                <img src = {apod} />
-=======
         const  picture  = this.state.apod;
         const  solar  = this.state.weather;
         console.log('3rd checking solar variable:', solar)
@@ -175,7 +169,6 @@ export default class MarsPage extends Component {
                 </select>
 				<button type="submit">Add for Today</button>
 			</form>
->>>>>>> 89d1e47d64b2bd187cb0072afc94625f7d560b4c
             </div>
         )
     }

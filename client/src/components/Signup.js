@@ -1,27 +1,22 @@
 import React, { Component } from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+// import { Form, Button, Alert } from "react-bootstrap";
 import { signup } from "../services/auth";
-
+// import "./LoginSignup.css";
 export default class Signup extends Component {
 	state = {
 		username: "",
 		password: "",
 		message: "",
 	};
-
 	handleChange = (event) => {
 		const { name, value } = event.target;
-
 		this.setState({
 			[name]: value,
 		});
 	};
-
 	handleSubmit = (event) => {
 		event.preventDefault();
-
 		const { username, password } = this.state;
-
 		signup(username, password).then((data) => {
 			console.log("checking returned data and message:", data);
 			if (data.message) {
@@ -36,38 +31,35 @@ export default class Signup extends Component {
 			}
 		});
 	};
-
 	render() {
 		return (
-			<>
+			<div className="SignupContainer">
 				<h2>Martian, sign up today!</h2>
-				<Form onSubmit={this.handleSubmit}>
-					<Form.Group>
-						<Form.Label htmlFor="username">Username: </Form.Label>
-						<Form.Control
-							type="text"
-							name="username"
-							value={this.state.username}
-							onChange={this.handleChange}
-							id="username"
-						/>
-					</Form.Group>
-					<Form.Group>
-						<Form.Label htmlFor="password">Password: </Form.Label>
-						<Form.Control
-							type="password"
-							name="password"
-							value={this.state.password}
-							onChange={this.handleChange}
-							id="password"
-						/>
-					</Form.Group>
+				<form onSubmit={this.handleSubmit}>
+					<label htmlFor="username">Username: </label>
+					<input
+						type="text"
+						name="username"
+						value={this.state.username}
+						onChange={this.handleChange}
+						id="username"
+					/>
+					<label htmlFor="password">Password: </label>
+					<input
+						type="password"
+						name="password"
+						value={this.state.password}
+						onChange={this.handleChange}
+						id="password"
+					/>
 					{this.state.message && (
-						<Alert variant="danger">{this.state.message}</Alert>
+						<alert variant="danger">{this.state.message}</alert>
 					)}
-					<Button type="submit">Sign up</Button>
-				</Form>
-			</>
+					<button type="submit" className="btn">
+						Sign up
+					</button>
+				</form>
+			</div>
 		);
 	}
 }
