@@ -7,16 +7,13 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-<<<<<<< HEAD
     "axios": "^0.21.1",
-=======
     "bcrypt": "^5.0.1",
     "bootstrap": "^5.0.2",
     "connect-mongo": "^4.4.1",
     "express-session": "^1.17.2",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
->>>>>>> 89d1e47d64b2bd187cb0072afc94625f7d560b4c
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "^17.0.2",
