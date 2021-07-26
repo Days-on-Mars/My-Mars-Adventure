@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import DynamicNavbar from "dynamic-react-navlinks";
-// import { logout } from "../services/auth";
+import { logout } from "../services/auth";
 import "./Navbar.css";
 
 export default function Navbar(props) {
-	// const handleLogout = () => {
-	// 	// this logs the user out on the server
-	// 	logout().then(() => {
-	// 		// we need to also remove the user from the state in App.js
-	// 		props.setUser(null);
-	// 	});
-	// };
+	const handleLogout = () => {
+		// this logs the user out on the server
+		logout().then(() => {
+			// we need to also remove the user from the state in App.js
+			props.setUser(null);
+		});
+	};
 
 	return (
 		<nav className="navbar">
@@ -35,7 +35,11 @@ export default function Navbar(props) {
 				</li>
 
 				<li>
-					<Link to="/log-out" className="navLinks">
+					<Link
+						to="/log-out"
+						onClick={() => handleLogout()}
+						className="navLinks"
+					>
 						Logout
 					</Link>
 				</li>

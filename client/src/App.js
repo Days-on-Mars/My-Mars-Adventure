@@ -23,7 +23,6 @@ class App extends React.Component {
 		return (
 			<>
 				<Navbar />
-				<Login />
 				<BrowserRouter>
 					<Switch>
 						{/*<Route exact path ={'/beers'} render={() => {

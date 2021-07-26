@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Form, Button, Alert } from "react-bootstrap";
 import { login } from "../services/auth";
-import "./Login.css";
+import "./LoginSignup.css";
 
 export default class Login extends Component {
 	state = {
@@ -41,7 +41,7 @@ export default class Login extends Component {
 
 	render() {
 		return (
-			<div className="loginForm">
+			<div className="LoginContainer">
 				<h2>Welcome back</h2>
 
 				<form onSubmit={this.handleSubmit}>
