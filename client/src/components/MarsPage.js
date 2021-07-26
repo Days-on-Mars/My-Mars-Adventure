@@ -39,11 +39,11 @@ export default class MarsPage extends Component {
 
 
     render() {
-        const { picture } = this.state
+        const { apod } = this.state
         return (
             <div>
                 <h2>test</h2>
-                <img src = {picture} />
+                <img src = {apod} />
             </div>
         )
     }
