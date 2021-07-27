@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Form, Button, Alert } from "react-bootstrap";
 import { login } from "../services/auth";
-import "./Login.css";
+import "./LoginSignup.css";
 
 export default class Login extends Component {
 	state = {
@@ -41,7 +41,8 @@ export default class Login extends Component {
 
 	render() {
 		return (
-			<div style={{ 
+			<div className="LoginContainer">
+				{/* <div style={{ 
 				backgroundImage: "url(/salmon-dunes.png)",
 				backgroundSize: 'cover', 
 				backgroundPosition: 'center center',
@@ -49,7 +50,7 @@ export default class Login extends Component {
 				height: '100vh',
 				width: '100vw'
 				}}
-			className="loginForm">
+			className="loginForm"> */}
 				<h2>Welcome back</h2>
 
 				<form onSubmit={this.handleSubmit}>

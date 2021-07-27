@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import { Form, Button, Alert } from "react-bootstrap";
 import { signup } from "../services/auth";
-// import "./LoginSignup.css";
+import "./LoginSignup.css";
+
 export default class Signup extends Component {
 	state = {
 		username: "",
@@ -33,7 +34,9 @@ export default class Signup extends Component {
 	};
 	render() {
 		return (
-			<div
+			<div className="SignupContainer">
+				<h2>Martian, sign up today!</h2>
+				{/* <div
 			 style={{ 
                         backgroundImage: "url(/sapphire-dunes.png)",
                         backgroundSize: 'cover', 
@@ -42,7 +45,7 @@ export default class Signup extends Component {
                         height: '100vh',
                         width: '100vw'
                         }} 
-			className="SignupContainer">
+			className="SignupContainer"> */}
 				{/* <h2>Martian, sign up today!</h2> */}
 				<form onSubmit={this.handleSubmit}>
 					<label htmlFor="username">Username: </label>
