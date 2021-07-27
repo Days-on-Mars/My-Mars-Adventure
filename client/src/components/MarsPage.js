@@ -34,6 +34,39 @@ export default class MarsPage extends Component {
         editModeEnabled: true
     }
 
+    getDatabaseData = () => {
+		axios.get(`http://localhost:5005/mars-journal/${this.props.user._id}`)
+			.then(response => {
+				console.log('checking data retrieving from mongodb:',response.data);
+			 	this.setState({
+			 paragrah: response.data.paragrah,
+             oneToDo: response.data.oneToDo,
+             oneStatus: response.data.oneStatus,
+             twoToDo: response.data.twoToDo,
+             twoStatus: response.data.twoStatus,
+             threeToDo: response.data.threeToDo,
+             threeStatus: response.data.threeStatus,
+             fourToDo: response.data.fourToDo,
+             fourStatus: response.data.fourStatus,
+             fiveToDo: response.data.fiveToDo,
+             fiveStatus: response.data.fiveStatus,
+             sixToDo: response.data.ixToDo,
+             sixStatus: response.data.sixStatus,
+             sevenToDo: response.data.sevenToDo,
+             sevenStatus: response.data.sevenStatus,
+             eightToDo: response.data.eightToDo,
+             eightStatus: response.data.eightStatus,
+             nineToDo: response.data.nineToDo,
+             nineStatus: response.data.nineStatus,
+             tenToDo: response.data.tenToDo,
+             tenStatus: response.data.tenStatus
+			 	})
+			})
+			.catch(err => console.log(err))
+	}
+
+
+
     getApodData = () => {
 		axios.get('https://api.nasa.gov/planetary/apod?api_key=rWoTXXeBvjPqFXL8VgQVicRTI2BLUNTmRdpbPOke')
 			.then(response => {
@@ -46,7 +79,7 @@ export default class MarsPage extends Component {
 	}
 
     getWeatherData = () => {
-		axios.get('https://api.nasa.gov/DONKI/FLR?startDate=2021-07-10&endDate=2021-07-22&api_key=rWoTXXeBvjPqFXL8VgQVicRTI2BLUNTmRdpbPOke&feedtype=json&ver=1.0')
+		axios.get('https://api.nasa.gov/DONKI/FLR?startDate=2021-07-10&endDate=2021-07-30&api_key=rWoTXXeBvjPqFXL8VgQVicRTI2BLUNTmRdpbPOke&feedtype=json&ver=1.0')
 			.then(response => {
 				console.log("2nd checking weather api returning data:", response);
 				this.setState({
@@ -60,6 +93,7 @@ export default class MarsPage extends Component {
 	componentDidMount() {
 		this.getApodData();
         this.getWeatherData();
+        this.getDatabaseData();
 	}
 
     
@@ -71,18 +105,11 @@ export default class MarsPage extends Component {
 		})
 	}
 
-    // toggleEditForm = () => {
-	// 	this.setState(state => ({
-	// 		editForm: !state.editForm
-	// 	}))
-	// }
+    
     handleAddClick() {
         this.setState({ editModeEnabled: !this.state.editModeEnabled });
       }
 
-    // handleEditClick() {
-    //     this.setState({ editModeEnabled: !this.state.editModeEnabled });
-    //   }
 
     handleSubmit = event => {
 		event.preventDefault();
@@ -135,9 +162,6 @@ export default class MarsPage extends Component {
             tenToDo: this.state.tenToDo,
             tenStatus: this.state.tenStatus
 				})
-				// trigger getData() in Projects.js to retrieve the current list
-				// of projects from the server
-				//this.props.getData();
 			})
 			.catch(err => console.log(err))
 	}
@@ -171,7 +195,7 @@ export default class MarsPage extends Component {
 		})
 			.then(response => {
 				this.setState({
-            updatedJournal: response.data,
+           // updatedJournal: response.data,
 			paragrah: response.data.paragrah,
             oneToDo: response.data.oneToDo,
             oneStatus: response.data.oneStatus,
@@ -183,7 +207,7 @@ export default class MarsPage extends Component {
             fourStatus: response.data.fourStatus,
             fiveToDo: response.data.fiveToDo,
             fiveStatus: response.data.fiveStatus,
-            sixToDo: response.data.ixToDo,
+            sixToDo: response.data.sixToDo,
             sixStatus: response.data.sixStatus,
             sevenToDo: response.data.sevenToDo,
             sevenStatus: response.data.sevenStatus,
@@ -194,32 +218,55 @@ export default class MarsPage extends Component {
             tenToDo: response.data.tenToDo,
             tenStatus: response.data.tenStatus
 				})
-				// trigger getData() in Projects.js to retrieve the current list
-				// of projects from the server
-				//this.props.getData();
+
 			})
 			.catch(err => console.log(err))
+            this.setState({ editModeEnabled: !this.state.editModeEnabled });
 	}
 
     deleteProject = () => {
-		// delete the project in the database
 		axios.delete(`/mars-journal/${this.state.article._id}`)
 			.then(() => {
-				this.props.history.push('/mars-journal/');
+                this.props.history.push('/mars-journal/');
+                 this.setState({
+                     paragrah: '',
+                     oneToDo: '',
+                     oneStatus: '',
+                     twoToDo: '',
+                     twoStatus: '',
+                     threeToDo: '',
+                     threeStatus: '',
+                     fourToDo: '',
+                     fourStatus: '',
+                     fiveToDo: '',
+                     fiveStatus: '',
+                     sixToDo: '',
+                     sixStatus: '',
+                     sevenToDo: '',
+                     sevenStatus: '',
+                     eightToDo: '',
+                     eightStatus: '',
+                     nineToDo: '',
+                     nineStatus: '',
+                     tenToDo: '',
+                     tenStatus: ''
+                 })
 			})
-			.catch(err => console.log(err))
+			.catch(err => console.log(err))      
 	}
 
+    
+
     render() {
-        // const { apod } = this.state
-        // const  picture  = this.state.apod;
+         const { apod } = this.state
+         const  picture  = this.state.apod;
         const  solar  = this.state.weather;
         console.log('3rd checking solar variable:', solar)
         return (
             <div>
                 <h2>Mars Life of User XYZ</h2>
                 <p>Welcome back, dear fellow Martian. As one of the first humans migrated to Mars, your journals are extremely valuable for the future generations to come.</p>
-                {/* <img src = {picture} style={{width: '600px'}} alt='space photo'></img> */}
+                <img src = {picture} style={{width: '600px'}} alt='space photo'></img>
                 <h4>Attention, solar activities, plan your day accordingly</h4>
                 {solar.map(elm =>
                 <div key={elm.flrID}>
@@ -227,7 +274,6 @@ export default class MarsPage extends Component {
                 </div>
                 )}
                 <p>Time recorded using Earth time. Disruption to data could occur due to space weather activities</p>
-                <h2>place holder for journal entry</h2>
 
                 <form onSubmit={this.handleSubmit}>
 				<label htmlFor="paragrah">Journal on Mars </label>
@@ -235,7 +281,7 @@ export default class MarsPage extends Component {
 					type="text"
 					id="paragrah"
 					name="paragrah"
-					value={this.state.name}
+                    value= {this.state.paragrah}
 					onChange={this.handleChange}
                     disabled={!this.state.editModeEnabled}
 				/>
@@ -244,24 +290,26 @@ export default class MarsPage extends Component {
 					type="text"
 					id="oneToDo"
 					name="oneToDo"
-					value={this.state.name}
+					value={this.state.oneToDo}
 					onChange={this.handleChange}
                     disabled={!this.state.editModeEnabled}
 				/>
                 <select name="oneStatus" value={this.state.selectValue} 
-                onChange={this.handleChange} disabled={!this.state.editModeEnabled}>
+                onChange={this.handleChange} 
+                disabled={!this.state.editModeEnabled}
+                >
                     <option value="Status">Current Status</option>
                     <option value="To do">To do</option>
                     <option value="In Progress">In Progress</option>
                     <option value="Completed">Completed</option>
                 </select>
 
-                <label htmlFor="twoToDo">Task 2 </label>
+                 <label htmlFor="twoToDo">Task 2 </label>
 				<input
 					type="text"
 					id="twoToDo"
 					name="twoToDo"
-					value={this.state.name}
+					value={this.state.twoToDo}
 					onChange={this.handleChange}
                     disabled={!this.state.editModeEnabled}
 				/>
@@ -278,7 +326,7 @@ export default class MarsPage extends Component {
 					type="text"
 					id="threeToDo"
 					name="threeToDo"
-					value={this.state.name}
+					value={this.state.threeToDo}
 					onChange={this.handleChange}
                     disabled={!this.state.editModeEnabled}
 				/>
@@ -295,7 +343,7 @@ export default class MarsPage extends Component {
 					type="text"
 					id="fourToDo"
 					name="fourToDo"
-					value={this.state.name}
+					value={this.state.fourToDo}
 					onChange={this.handleChange}
                     disabled={!this.state.editModeEnabled}
 				/>
@@ -312,7 +360,7 @@ export default class MarsPage extends Component {
 					type="text"
 					id="fiveToDo"
 					name="fiveToDo"
-					value={this.state.name}
+					value={this.state.fiveToDo}
 					onChange={this.handleChange}
                     disabled={!this.state.editModeEnabled}
 				/>
@@ -329,7 +377,7 @@ export default class MarsPage extends Component {
 					type="text"
 					id="sixToDo"
 					name="sixToDo"
-					value={this.state.name}
+					value={this.state.sixToDo}
 					onChange={this.handleChange}
                     disabled={!this.state.editModeEnabled}
 				/>
@@ -346,7 +394,7 @@ export default class MarsPage extends Component {
 					type="text"
 					id="sevenToDo"
 					name="sevenToDo"
-					value={this.state.name}
+					value={this.state.sevenToDo}
 					onChange={this.handleChange}
                     disabled={!this.state.editModeEnabled}
 				/>
@@ -363,7 +411,7 @@ export default class MarsPage extends Component {
 					type="text"
 					id="eightToDo"
 					name="eightToDo"
-					value={this.state.name}
+					value={this.state.eightToDo}
 					onChange={this.handleChange}
                     disabled={!this.state.editModeEnabled}
 				/>
@@ -380,7 +428,7 @@ export default class MarsPage extends Component {
 					type="text"
 					id="nineToDo"
 					name="nineToDo"
-					value={this.state.name}
+					value={this.state.nineToDo}
 					onChange={this.handleChange}
                     disabled={!this.state.editModeEnabled}
 				/>
@@ -397,7 +445,7 @@ export default class MarsPage extends Component {
 					type="text"
 					id="tenToDo"
 					name="tenToDo"
-					value={this.state.name}
+					value={this.state.tenToDo}
 					onChange={this.handleChange}
                     disabled={!this.state.editModeEnabled}
 				/>
@@ -409,7 +457,7 @@ export default class MarsPage extends Component {
                     <option value="Completed">Completed</option>
                 </select>
 
-				<button type="submit" onClick={this.handleAddClick.bind(this)} >Add</button>
+				<button type="submit" onClick={this.handleAddClick.bind(this)} >Add</button> 
             </form>
             <button onClick={this.handleAddClick.bind(this)}>Edit</button>
             <button onClick={this.handleEditSubmit} type="submit">Re-submit</button>

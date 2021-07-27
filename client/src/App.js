@@ -43,9 +43,9 @@ class App extends React.Component {
 						/>
 						<Route
 							exact
-							path={"/mars-journal"}
+							path={"/mars-journal"} 
 							render={(props) => {
-								if (this.state.user) return <MarsPage {...props} />;
+								if (this.state.user) return <MarsPage user = {this.state.user} {...props} />;
 								else return <Redirect to="/" />;
 							}}
 						/>

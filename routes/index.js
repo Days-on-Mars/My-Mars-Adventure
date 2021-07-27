@@ -5,6 +5,23 @@ const UserInput = require('../models/UserInput')
 
 //no need to render or redirect any pages, this is done in front-end
 
+//get relevent user entries from the database for Mars page, this is user-specific
+router.get('/mars-journal/:userID', (req, res, next) => {
+    console.log("checking if req.params:", req.params);
+	const loggedInUser = req.params.userID;
+	console.log("checking if receiving user info for mars page:", loggedInUser);
+    User.findById(loggedInUser)
+        .populate('journaladded')
+        .then(userFromDB =>
+		//	userFromDB => {
+			//console.log("checking journal from DB:", userFromDB);
+        //   res.render('Dashboard', { user: userFromDB });
+		res.status(200).json(userFromDB)
+        )
+        .catch(err => {
+			console.log(err);
+		})
+  });
 
 //creating user entries
 router.post('/mars-journal', (req, res, next) => {
@@ -52,16 +69,15 @@ router.post('/mars-journal/:id', (req, res, next) => {
   });
   
 
-//get relevent user entries from the database, this is user-specific
-router.get('/dashboard', (req, res, next) => {
-    const loggedInUser = req.user;
-	console.log("checking if receiving user info:", loggedInUser._id);
-    User.findById(loggedInUser._id)
+
+
+//get relevent user entries from the database for dashboard page, this is user-specific
+router.get('/dashboard/:userID', (req, res, next) => {
+	const loggedInUser = req.params.userID;
+	console.log("checking if receiving user info:", loggedInUser);
+    User.findById(loggedInUser)
         .populate('journaladded')
         .then(userFromDB =>
-		//	userFromDB => {
-		//	console.log("checking info from DB:", userFromDB)
-        //   res.render('Dashboard', { user: userFromDB });
 		res.status(200).json(userFromDB)
         )
         .catch(err => {
