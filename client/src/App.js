@@ -1,8 +1,8 @@
 import './App.css';
-import axios from 'axios';
+// import axios from 'axios';
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
-import { render } from '@testing-library/react';
+// import { render } from '@testing-library/react';
 import MarsPage from './components/MarsPage';
 import HomePage from './components/HomePage';
 import Dashboard from './components/Dashboard';
@@ -25,7 +25,7 @@ class App extends React.Component {
 		return (
 			<>
 				<Navbar />
-				<Login />
+				{/* <Login /> */}
 				<BrowserRouter>
 					<Switch>
 						{/*<Route exact path ={'/beers'} render={() => {

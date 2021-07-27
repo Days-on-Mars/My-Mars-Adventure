@@ -41,7 +41,15 @@ export default class Login extends Component {
 
 	render() {
 		return (
-			<div className="loginForm">
+			<div style={{ 
+				backgroundImage: "url(/salmon-dunes.png)",
+				backgroundSize: 'cover', 
+				backgroundPosition: 'center center',
+				backgroundRepeat: 'no-repeat',
+				height: '100vh',
+				width: '100vw'
+				}}
+			className="loginForm">
 				<h2>Welcome back</h2>
 
 				<form onSubmit={this.handleSubmit}>

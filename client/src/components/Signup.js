@@ -33,8 +33,17 @@ export default class Signup extends Component {
 	};
 	render() {
 		return (
-			<div className="SignupContainer">
-				<h2>Martian, sign up today!</h2>
+			<div
+			 style={{ 
+                        backgroundImage: "url(/sapphire-dunes.png)",
+                        backgroundSize: 'cover', 
+                        backgroundPosition: 'center center',
+                        backgroundRepeat: 'no-repeat',
+                        height: '100vh',
+                        width: '100vw'
+                        }} 
+			className="SignupContainer">
+				{/* <h2>Martian, sign up today!</h2> */}
 				<form onSubmit={this.handleSubmit}>
 					<label htmlFor="username">Username: </label>
 					<input
