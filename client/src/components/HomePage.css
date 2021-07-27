@@ -1,7 +1,24 @@
 .title {
-    font-family: "Neuropol";
+	font-family: "Neuropol";
+	text-align: center;
+	font-size: 2.5rem;
 }
 
 .text {
-    font-family: "Trueno Light", sans-serif;
+	font-family: "Trueno Light", sans-serif;
+	padding: 50px;
+	background-color: white;
+	margin: 20px;
+	border-radius: 10px;
+}
+
+.HomepageContainer {
+	padding: 30px;
+}
+
+.homeLinks {
+	text-decoration: none;
+	color: rgb(14, 174, 248);
+	font-size: 1.2rem;
+	font-weight: bold;
 }
