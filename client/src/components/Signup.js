@@ -9,20 +9,15 @@ export default class Signup extends Component {
 		password: "",
 		message: "",
 	};
-
 	handleChange = (event) => {
 		const { name, value } = event.target;
-
 		this.setState({
 			[name]: value,
 		});
 	};
-
 	handleSubmit = (event) => {
 		event.preventDefault();
-
 		const { username, password } = this.state;
-
 		signup(username, password).then((data) => {
 			console.log("checking returned data and message:", data);
 			if (data.message) {
@@ -37,11 +32,21 @@ export default class Signup extends Component {
 			}
 		});
 	};
-
 	render() {
 		return (
 			<div className="SignupContainer">
 				<h2>Martian, sign up today!</h2>
+				{/* <div
+			 style={{ 
+                        backgroundImage: "url(/sapphire-dunes.png)",
+                        backgroundSize: 'cover', 
+                        backgroundPosition: 'center center',
+                        backgroundRepeat: 'no-repeat',
+                        height: '100vh',
+                        width: '100vw'
+                        }} 
+			className="SignupContainer"> */}
+				{/* <h2>Martian, sign up today!</h2> */}
 				<form onSubmit={this.handleSubmit}>
 					<label htmlFor="username">Username: </label>
 					<input
@@ -59,7 +64,6 @@ export default class Signup extends Component {
 						onChange={this.handleChange}
 						id="password"
 					/>
-
 					{this.state.message && (
 						<alert variant="danger">{this.state.message}</alert>
 					)}
