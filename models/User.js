@@ -7,6 +7,12 @@ const userSchema = new Schema({
     // unique: true -> Ideally, should be unique, but its up to you
   },
   password: String,
+  journaladded: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'UserInput'
+    }
+  ]
 });
 
 const User = model("User", userSchema);
