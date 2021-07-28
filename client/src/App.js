@@ -30,8 +30,8 @@ class App extends React.Component {
 					{/*<Route exact path ={'/beers'} render={() => {
               return <beers beerData={this.state.beers}/>
             }} /> */}
- nav-login-signup
-					<Route
+
+          <Route
 						exact
 						path="/sign-up"
 						render={(props) => <Signup setUser={this.setUser} {...props} />}
@@ -50,7 +50,13 @@ class App extends React.Component {
 						}}
 					/>
 					<Route exact path={"/"} component={HomePage} />
-					<Route exact path={"/dashboard"} component={Dashboard} />
+            
+					<Route exact path={"/dashboard"}
+							render={(props) => {
+								if (this.state.user) return <Dashboard {...props} />;
+								else return <Redirect to="/" />;
+							}}
+						/>
 
 					{/*<Route exact path ={'/dashboard'} render={props => {
 						<Route
@@ -84,3 +90,4 @@ class App extends React.Component {
 	}
 }
 export default App;
+
