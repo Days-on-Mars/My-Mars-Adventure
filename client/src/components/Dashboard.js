@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import './Dashboard.css';
-import axios from 'axios'
-
-export default class Dashboard extends Component {
+import React, { Component } from "react";
+import "./Dashboard.css";
+import axios from "axios";
 
     state = {
         search: '',
@@ -68,13 +66,10 @@ export default class Dashboard extends Component {
                 checked={this.state.journal}/>
             </label> 
 
-            <label>
-             Task
-              <input
-                name="task"
-                type="checkbox"
-                checked={this.state.task}/>
-            </label>
+	        <label>
+					Task
+					<input name="task" type="checkbox" checked={this.state.task} />
+			  	</label>
 
           {this.state.journaladded.map(singleEntry => {
             return (
@@ -103,7 +98,9 @@ export default class Dashboard extends Component {
             )
           })}
 
-            </div>
-        )
-    }
+			
+
+			</div>
+		);
+	}
 }
