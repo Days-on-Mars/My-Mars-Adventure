@@ -7,7 +7,7 @@ export default class HomePage extends Component {
 		return (
 			<div
 				style={{
-					backgroundImage: "url(/cyan-dunes.png)",
+					backgroundImage: "url(/background7.jpg)",
 					backgroundSize: "cover",
 					backgroundPosition: "center center",
 					backgroundRepeat: "no-repeat",
