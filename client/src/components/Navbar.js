@@ -33,11 +33,7 @@ export default function Navbar(props) {
 							</Link>
 						</li>
 						<li>
-							<Link
-								to="/log-out"
-								onClick={() => handleLogout()}
-								className="navLinks"
-							>
+							<Link to="/" onClick={() => handleLogout()} className="navLinks">
 								Logout
 							</Link>
 						</li>
