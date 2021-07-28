@@ -57,7 +57,6 @@ router.get('/dashboard', (req, res, next) => {
     const loggedInUser = req.user;
 	console.log("checking if receiving user info:", loggedInUser._id);
     User.findById(loggedInUser._id)
-        .populate('journaladded')
         .then(userFromDB =>
 		//	userFromDB => {
 		//	console.log("checking info from DB:", userFromDB)

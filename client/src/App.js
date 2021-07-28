@@ -26,8 +26,7 @@ class App extends React.Component {
 			<>
 				<Navbar user={this.state.user} setUser={this.setUser} />
 				{/* <Login /> */}
-				<BrowserRouter>
-					<Switch>
+			
 						{/*<Route exact path ={'/beers'} render={() => {
               return <beers beerData={this.state.beers}/>
             }} /> */}
@@ -50,14 +49,18 @@ class App extends React.Component {
 							}}
 						/>
 						<Route exact path={"/"} component={HomePage} />
-						<Route exact path={"/dashboard"} component={Dashboard} />
+
+						<Route exact path={"/dashboard"}
+							render={(props) => {
+								if (this.state.user) return <Dashboard {...props} />;
+								else return <Redirect to="/" />;
+							}}
+						/>
 						{/*<Route exact path ={'/dashboard'} render={props => {
             if (this.state.user) return <Dashboard {...props}/>
             else return <Redirect to='/' />
           }}
           />*/}
-					</Switch>
-				</BrowserRouter>
 			</>
 		);
 	}

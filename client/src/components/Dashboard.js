@@ -8,6 +8,8 @@ export default class Dashboard extends Component {
         search: '',
         task: false,
         journal: false,
+        journaladded: [],
+        error: false,
         month: 'all',
         day: 'all',
         year: 'all'
@@ -24,14 +26,20 @@ export default class Dashboard extends Component {
       }
 
       componentDidMount() {
-		axios.get('/mars-journal')
+		    axios.get('/dashboard')
         .then((result) => {
-            console.log('result', result);
+          console.log('result.data', result.data);
+          this.setState({
+            journaladded: result.data.journaladded,
+          })
         })
     }
 
     render() {
+      
         return (
+
+          
             <div style={{ 
               backgroundImage: "url(/rust-dunes.png)",
               backgroundSize: 'cover', 
@@ -40,17 +48,17 @@ export default class Dashboard extends Component {
               height: '100vh',
               width: '100vw'
               }}>
-                <h1><b></b></h1>
-                <p>Search archived Days on Mars journal entries and tasks</p>
 
-                <label htmlFor="search"></label>
+                <h1>Search archived Days on Mars journal entries</h1>
+            
                 <input
-                type="search"
+                type="text"
                 name="search"
-                id="search"
                 value={this.state.search}
-                onChange={this.handleChange}
+                placeholder="Search your archive"
+                onChange={this.handleInputChange}
                 />
+                <label htmlFor="search"></label>
 
             <label>
               Journal Entry
@@ -58,7 +66,7 @@ export default class Dashboard extends Component {
                 name="journal-entry"
                 type="checkbox"
                 checked={this.state.journal}/>
-            </label>
+            </label> 
 
             <label>
              Task
@@ -68,8 +76,32 @@ export default class Dashboard extends Component {
                 checked={this.state.task}/>
             </label>
 
-            <div>
-            </div>
+          {this.state.journaladded.map(singleEntry => {
+            return (
+
+              <div>
+
+                <h3>{singleEntry.createdAt}</h3>
+                <p>{singleEntry.paragrah}</p>
+
+                <ul>
+
+                <li> {singleEntry.oneToDo} </li>
+                <li> {singleEntry.twoToDo} </li>
+                <li> {singleEntry.threeToDo} </li>
+                <li> {singleEntry.fourToDo} </li>
+                <li> {singleEntry.fiveToDo} </li>
+                <li> {singleEntry.sixToDo} </li>
+                <li> {singleEntry.sevenToDo} </li>
+                <li> {singleEntry.eightToDo} </li>
+                <li> {singleEntry.nineToDo} </li>
+                <li> {singleEntry.tenToDo} </li>
+
+                </ul>
+               
+              </div>
+            )
+          })}
 
             </div>
         )
