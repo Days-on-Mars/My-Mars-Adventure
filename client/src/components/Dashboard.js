@@ -14,7 +14,6 @@ export default class Dashboard extends Component {
     
        handleChange = e => {
          console.log('checking state in handle change:', this.state.search)
-
          const name = e.target.name;
          const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
          this.setState({
@@ -41,22 +40,20 @@ export default class Dashboard extends Component {
       //console.log('2nd checking newly created data array:', this.state.createdAt)
       //let dataFilter = this.state.paragrah;
      // console.log('3rd checking newly created data array:', dataFilter.paragrah)
-        let filteredData = this.state.entryData.filter(data => 
-          ((data.paragrah.toLowerCase().includes(this.state.search.toLowerCase())) 
-           || (data.oneToDo.toLowerCase().includes(this.state.search.toLowerCase()))
-           || (data.twoToDo.toLowerCase().includes(this.state.search.toLowerCase()))
-           || (data.threeToDo.toLowerCase().includes(this.state.search.toLowerCase()))
-           || (data.fourToDo.toLowerCase().includes(this.state.search.toLowerCase()))
-           || (data.fiveToDo.toLowerCase().includes(this.state.search.toLowerCase()))
-           || (data.sixToDo.toLowerCase().includes(this.state.search.toLowerCase()))
-           || (data.sevenToDo.toLowerCase().includes(this.state.search.toLowerCase()))
-           || (data.eightToDo.toLowerCase().includes(this.state.search.toLowerCase()))
-           || (data.nineToDo.toLowerCase().includes(this.state.search.toLowerCase()))
-           || (data.tenToDo.toLowerCase().includes(this.state.search.toLowerCase())))
-
-           && ((data.createdAt.slice(0,10) === this.state.date) || !this.state.date)
-
-        )
+     let filteredData = this.state.entryData.filter(data =>
+      (!this.state.search || (data.paragrah.toLowerCase().includes(this.state.search.toLowerCase()))
+       || (data.oneToDo.toLowerCase().includes(this.state.search.toLowerCase()))
+       || (data.twoToDo.toLowerCase().includes(this.state.search.toLowerCase()))
+       || (data.threeToDo.toLowerCase().includes(this.state.search.toLowerCase()))
+       || (data.fourToDo.toLowerCase().includes(this.state.search.toLowerCase()))
+       || (data.fiveToDo.toLowerCase().includes(this.state.search.toLowerCase()))
+       || (data.sixToDo.toLowerCase().includes(this.state.search.toLowerCase()))
+       || (data.sevenToDo.toLowerCase().includes(this.state.search.toLowerCase()))
+       || (data.eightToDo.toLowerCase().includes(this.state.search.toLowerCase()))
+       || (data.nineToDo.toLowerCase().includes(this.state.search.toLowerCase()))
+       || (data.tenToDo.toLowerCase().includes(this.state.search.toLowerCase())))
+       && ((data.createdAt.slice(0,10) === this.state.date) || !this.state.date)
+    )
         return (
           <>
       <label htmlFor="search"></label>

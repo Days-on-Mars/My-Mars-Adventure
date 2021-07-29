@@ -287,14 +287,16 @@ export default class MarsPage extends Component {
 		return (
 			<div className="MarsPageContainer">
 				<div className="topSection">
-                <h2>Mars Life of {this.props.user.username}</h2>
+				<div className="userNameGlow">
+                <h2>{this.props.user.username}'s Life on Mars </h2>
+				</div>
                 <p className="welcomingStatement">
 
 						Welcome back, dear fellow Martian. As one of the first humans
-						migrated to Mars, your journals are extremely valuable for the
-						future generations to come.
+						migrated to Mars, your journals are extremely valuable for our 
+						galaxy's future generations.
 					</p>
-					<div>
+					<div className="PictureBox">
 						<img
 							src={picture}
 							style={{ width: "600px" }}
@@ -302,7 +304,9 @@ export default class MarsPage extends Component {
 						></img>
 					</div>
 					<h4 class="warning">
-						Attention, solar activities, plan your day accordingly
+						Attention: solar activities displayed below, plan your day accordingly.
+						We advise you do not leave the premises of your pod during
+						the occurance of a solar flare. 
 					</h4>
 				</div>
 				<div className="solarFlareData">
@@ -314,8 +318,8 @@ export default class MarsPage extends Component {
 						</div>
 					))}
 					<p className="warningSolarData">
-						Time recorded using Earth time. Disruption to data could occur due
-						to space weather activities
+						Time recorded uses Earth time. Disruption to data may occur due
+						to space weather activities.
 					</p>
 				</div>
 
