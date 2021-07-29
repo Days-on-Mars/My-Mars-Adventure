@@ -30,7 +30,6 @@ class App extends React.Component {
 					{/*<Route exact path ={'/beers'} render={() => {
               return <beers beerData={this.state.beers}/>
             }} /> */}
- nav-login-signup
 					<Route
 						exact
 						path="/sign-up"
@@ -45,7 +44,8 @@ class App extends React.Component {
 						exact
 						path={"/mars-journal"}
 						render={(props) => {
-							if (this.state.user) return <MarsPage {...props} />;
+							if (this.state.user)
+								return <MarsPage user={this.state.user} {...props} />;
 							else return <Redirect to="/" />;
 						}}
 					/>
