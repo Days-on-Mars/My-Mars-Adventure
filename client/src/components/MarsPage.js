@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 import axios from "axios";
 import EditJournal from "./EditJournal";
-// import "./MarsPage.css";
+import "./MarsPage.css";
 
 //const toDo = [oneToDo, twoToDo, threeToDo, fourToDo, fiveToDo, sixToDo, sevenToDo, eightToDo, nineToDo, tenToDo]
 export default class MarsPage extends Component {
@@ -36,7 +36,7 @@ export default class MarsPage extends Component {
 
 	getDatabaseData = () => {
 		axios
-			.get('http://localhost:5005/mars-journal/${this.props.user._id}')
+			.get(`http://localhost:5005/mars-journal/${this.props.user._id}`)
 			.then((response) => {
 				console.log("checking data retrieving from mongodb:", response.data);
 				this.setState({
@@ -194,7 +194,7 @@ export default class MarsPage extends Component {
 		} = this.state;
 
 		axios
-			.post('/mars-journal/${this.state.article._id}', {
+			.post(`/mars-journal/${this.state.article._id}`, {
 				paragrah,
 				oneToDo,
 				oneStatus,
@@ -249,7 +249,7 @@ export default class MarsPage extends Component {
 
 	deleteProject = () => {
 		axios
-			.delete('/mars-journal/${this.state.article._id}')
+			.delete(`/mars-journal/${this.state.article._id}`)
 			.then(() => {
 				this.props.history.push("/mars-journal/");
 				this.setState({
@@ -289,6 +289,7 @@ export default class MarsPage extends Component {
 				<div className="topSection">
                 <h2>Mars Life of {this.props.user.username}</h2>
                 <p className="welcomingStatement">
+
 						Welcome back, dear fellow Martian. As one of the first humans
 						migrated to Mars, your journals are extremely valuable for the
 						future generations to come.
