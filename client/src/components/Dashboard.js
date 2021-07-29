@@ -10,27 +10,30 @@ export default class Dashboard extends Component {
         date: '',
         entryData: []
       }
+
     
        handleChange = e => {
          console.log('checking state in handle change:', this.state.search)
+
          const name = e.target.name;
          const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
          this.setState({
          [name]: value
          });
        }
-
+       
       componentDidMount() {
 		axios.get(`/dashboard/${this.props.user._id}`)
     .then(response => {
       console.log('1st checking data retrieving from mongodb:',response.data.journaladded[0].paragrah);
       this.setState({
          entryData: response.data.journaladded
-      
+
        })
     })
     .catch(err => console.log(err))
 }
+
 
     render() {
        //if state is not empty, then
@@ -50,6 +53,7 @@ export default class Dashboard extends Component {
            || (data.eightToDo.toLowerCase().includes(this.state.search.toLowerCase()))
            || (data.nineToDo.toLowerCase().includes(this.state.search.toLowerCase()))
            || (data.tenToDo.toLowerCase().includes(this.state.search.toLowerCase())))
+
            && ((data.createdAt.slice(0,10) === this.state.date) || !this.state.date)
 
         )
@@ -66,11 +70,7 @@ export default class Dashboard extends Component {
       />
     <label htmlFor="date">Date: </label>
     <select name="date" onChange={this.handleChange}>
-					{/* <select name="createdAt" onChange={this.handleChange}>
-					{this.state.entryData.map(day => (
-            <option value={day.createdAt}>{day.createdAt}</option>
-            )
-          } */}
+
           <option value={this.state.entryData[0].createdAt.slice(0, 10)}>{this.state.entryData[0].createdAt.slice(0, 10)}</option>
           <option value='2021-07-20'>2021-07-20</option>
 
@@ -101,6 +101,7 @@ export default class Dashboard extends Component {
               <th>Status</th>
               <th>Task</th>
               <th>Status</th>
+
 						</tr>
 					</thead>
 					<tbody>
@@ -128,6 +129,7 @@ export default class Dashboard extends Component {
               <td>{data.nineStatus}</td>
               <td>{data.tenToDo}</td>
               <td>{data.tenStatus}</td>
+
 						</tr>
 						))}
 					</tbody>
@@ -138,3 +140,4 @@ export default class Dashboard extends Component {
         )
     }
 }
+

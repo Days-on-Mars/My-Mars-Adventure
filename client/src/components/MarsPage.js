@@ -287,8 +287,9 @@ export default class MarsPage extends Component {
 		return (
 			<div className="MarsPageContainer">
 				<div className="topSection">
-					<h2>Mars Life of User XYZ</h2>
-					<p className="welcomingStatement">
+                <h2>Mars Life of {this.props.user.username}</h2>
+                <p className="welcomingStatement">
+
 						Welcome back, dear fellow Martian. As one of the first humans
 						migrated to Mars, your journals are extremely valuable for the
 						future generations to come.
