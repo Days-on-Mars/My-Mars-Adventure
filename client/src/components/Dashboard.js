@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./Dashboard.css";
 import axios from "axios";
 
+
+export default class Dashboard extends Component {
+	
     state = {
         search: '',
         date: '',

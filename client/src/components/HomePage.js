@@ -11,15 +11,15 @@ export default class HomePage extends Component {
 					backgroundSize: "cover",
 					backgroundPosition: "center center",
 					backgroundRepeat: "no-repeat",
-					height: "100vh",
+					height: "93vh",
 					width: "100vw",
 					position: "absolute",
-					top: 0,
-					right: 0,
-					bottom: 0,
-					left: 0,
-					margin: 0,
-					padding: 0,
+					// top: 0,
+					// right: 0,
+					// bottom: 0,
+					// left: 0,
+					// margin: 0,
+					// padding: 0,
 				}}
 			>
 				<h1 className="title">Days on Mars</h1>

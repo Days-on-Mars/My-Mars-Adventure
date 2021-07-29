@@ -9,14 +9,14 @@
 	/* font-family: "Trueno Light", sans-serif; */
 	font-family: "Rajdhani", sans-serif;
 	padding: 50px;
-	background-color: white;
+	background-color: rgb(83, 104, 166);
 	margin: 20px;
 	border-radius: 10px;
 }
 
-.HomepageContainer {
+/* .HomepageContainer {
 	padding: 30px;
-}
+} */
 
 .homeLinks {
 	text-decoration: none;

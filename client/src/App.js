@@ -45,7 +45,8 @@ class App extends React.Component {
 						exact
 						path={"/mars-journal"}
 						render={(props) => {
-							if (this.state.user) return <MarsPage {...props} />;
+							if (this.state.user)
+								return <MarsPage user={this.state.user} {...props} />;
 							else return <Redirect to="/" />;
 						}}
 					/>
@@ -57,33 +58,6 @@ class App extends React.Component {
 								else return <Redirect to="/" />;
 							}}
 						/>
-
-					{/*<Route exact path ={'/dashboard'} render={props => {
-						<Route
-							exact
-							path="/sign-up"
-							render={(props) => <Signup setUser={this.setUser} {...props} />}
-						/>
-						<Route
-							exact
-							path="/log-in"
-							render={(props) => <Login setUser={this.setUser} {...props} />}
-						/>
-						<Route
-							exact
-							path={"/mars-journal"} 
-							render={(props) => {
-								if (this.state.user) return <MarsPage user = {this.state.user} {...props} />;
-								else return <Redirect to="/" />;
-							}}
-						/>
-						<Route exact path={"/"} component={HomePage} />
-						<Route exact path={"/dashboard"} component={Dashboard} />
-						{/*<Route exact path ={'/dashboard'} render={props => {
-            if (this.state.user) return <Dashboard {...props}/>
-            else return <Redirect to='/' />
-          }}
-          />*/}
 				</Switch>
 			</>
 		);
