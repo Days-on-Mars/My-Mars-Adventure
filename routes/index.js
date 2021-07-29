@@ -69,8 +69,6 @@ router.post('/mars-journal/:id', (req, res, next) => {
   });
   
 
-
-
 //get relevent user entries from the database for dashboard page, this is user-specific
 router.get('/dashboard/:userID', (req, res, next) => {
 	const loggedInUser = req.params.userID;
