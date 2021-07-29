@@ -264,7 +264,7 @@ export default class MarsPage extends Component {
         console.log('3rd checking solar variable:', solar)
         return (
             <div>
-                <h2>Mars Life of User XYZ</h2>
+                <h2>Mars Life of User {this.props.user.username}</h2>
                 <p>Welcome back, dear fellow Martian. As one of the first humans migrated to Mars, your journals are extremely valuable for the future generations to come.</p>
                 <img src = {picture} style={{width: '600px'}} alt='space photo'></img>
                 <h4>Attention, solar activities, plan your day accordingly</h4>
