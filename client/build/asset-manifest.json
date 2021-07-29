@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.897f9afd.chunk.css",
+    "main.js": "/static/js/main.12d7698a.chunk.js",
+    "main.js.map": "/static/js/main.12d7698a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.32479984.js",
+    "runtime-main.js.map": "/static/js/runtime-main.32479984.js.map",
+    "static/js/2.17b9e42f.chunk.js": "/static/js/2.17b9e42f.chunk.js",
+    "static/js/2.17b9e42f.chunk.js.map": "/static/js/2.17b9e42f.chunk.js.map",
+    "static/js/3.cac6f47a.chunk.js": "/static/js/3.cac6f47a.chunk.js",
+    "static/js/3.cac6f47a.chunk.js.map": "/static/js/3.cac6f47a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.897f9afd.chunk.css.map": "/static/css/main.897f9afd.chunk.css.map",
+    "static/js/2.17b9e42f.chunk.js.LICENSE.txt": "/static/js/2.17b9e42f.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/neuropol.1c9bcc3a.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.32479984.js",
+    "static/js/2.17b9e42f.chunk.js",
+    "static/css/main.897f9afd.chunk.css",
+    "static/js/main.12d7698a.chunk.js"
+  ]
+}
