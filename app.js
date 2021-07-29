@@ -35,12 +35,11 @@ app.use(
 // passport configuration
 // http://www.passportjs.org/docs/configure/
 
-const User = require('./models/User');
-const UserInput = require('./models/UserInput')
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const bcrypt = require('bcrypt');
-
+const User = require("./models/User");
+const UserInput = require("./models/UserInput");
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+const bcrypt = require("bcrypt");
 
 // this method is used by passport to put the id of the user into the session
 passport.serializeUser((user, done) => {
@@ -92,9 +91,14 @@ app.use("/", pageRoutes);
 
 const auth = require("./routes/auth");
 app.use("/", auth);
+
+const path = require("path");
+app.use(express.static(path.join(__dirname, "/client/build")));
+app.use((req, res) => {
+	// If no routes match, send them the React HTML.
+	res.sendFile(__dirname + "/client/build/index.html");
+});
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
 module.exports = app;
-
-
