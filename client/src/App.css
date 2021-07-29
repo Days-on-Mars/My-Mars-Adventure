@@ -1,1 +1,17 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	overflow-x: hidden;
+}
 
+@font-face {
+	font-family: "Neuropol";
+	src: local("Neuropol"), url(./fonts/neuropol.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "Trueno Light";
+	src: local("Trueno Light"),
+		url(./fonts/TruenoLight-E2pg.otf) format("opentype");
+}

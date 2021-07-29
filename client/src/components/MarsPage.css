@@ -1,0 +1,112 @@
+.MarsPageContainer {
+	font-family: "Rajdhani", sans-serif;
+	padding-bottom: 60px;
+	background-color: rgb(83, 104, 166);
+}
+
+.topSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 0;
+	font-family: "Tourney", cursive;
+	font-size: 1.1rem;
+	color: rgb(15, 0, 51);
+	font-weight: bold;
+}
+
+.solarFlareData {
+	background-color: rgb(250, 80, 1);
+	margin: 60px;
+	padding: 30px;
+	border-radius: 10px;
+	margin-top: 0;
+}
+
+.warning {
+	font-size: 2rem;
+	font-family: "Tourney", cursive;
+	color: rgb(250, 80, 1);
+}
+
+.warningSolarData {
+	color: white;
+}
+
+.buttonsContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.bottomButtons {
+	margin: 10px;
+	font-family: "Rajdhani", sans-serif;
+	padding: 15px;
+	border-radius: 5px;
+	border-style: none;
+	font-size: 1.2rem;
+	background-color: rgb(206, 203, 203);
+	cursor: pointer;
+}
+
+.inputMarsJournal {
+	width: 20vw;
+}
+
+label {
+	color: rgb(250, 80, 1);
+}
+
+.formContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	padding: 30px;
+	align-items: stretch;
+	background-color: rgb(15, 0, 51);
+	margin: 60px;
+	padding: 30px;
+	border-radius: 10px;
+	margin-top: 0;
+}
+
+.formElement {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.addButton {
+	height: 50px;
+	margin: 30px;
+	width: 70px;
+	font-family: "Rajdhani", sans-serif;
+	font-size: 1.3rem;
+	border-radius: 5px;
+	border-style: none;
+	background-color: rgb(250, 80, 1);
+	cursor: pointer;
+}
+
+input {
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.checkbox {
+	border-radius: 4px;
+	padding: 4px;
+	background-color: rgb(206, 203, 203);
+	cursor: pointer;
+}
+
+.formElement select {
+	position: relative;
+	font-family: "Rajdhani", sans-serif;
+}
