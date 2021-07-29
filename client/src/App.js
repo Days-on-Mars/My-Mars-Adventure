@@ -50,7 +50,10 @@ class App extends React.Component {
 							}}
 						/>
 						<Route exact path={"/"} component={HomePage} />
-						<Route exact path={"/dashboard"} component={Dashboard} />
+						<Route exact path={"/dashboard"} render={(props) => {
+								if (this.state.user) return <Dashboard user = {this.state.user} {...props} />;
+								else return <Redirect to="/" />;
+							}} />
 						{/*<Route exact path ={'/dashboard'} render={props => {
             if (this.state.user) return <Dashboard {...props}/>
             else return <Redirect to='/' />
