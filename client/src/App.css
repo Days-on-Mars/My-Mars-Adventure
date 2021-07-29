@@ -3,6 +3,7 @@ body {
 	padding: 0;
 	width: 100vw;
 	overflow-x: hidden;
+	background-color: rgb(83, 104, 166);
 }
 
 @font-face {

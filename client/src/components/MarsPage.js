@@ -287,6 +287,7 @@ export default class MarsPage extends Component {
 		return (
 			<div className="MarsPageContainer">
 				<div className="topSection">
+
 				<div className="userNameGlow">
                 <h2>{this.props.user.username}'s Life on Mars </h2>
 				</div>

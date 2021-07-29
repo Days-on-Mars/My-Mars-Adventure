@@ -31,7 +31,7 @@ class App extends React.Component {
               return <beers beerData={this.state.beers}/>
             }} /> */}
 
-         			 <Route
+         	<Route
 						exact
 						path="/sign-up"
 						render={(props) => <Signup setUser={this.setUser} {...props} />}
@@ -51,17 +51,19 @@ class App extends React.Component {
 						}}
 					/>
 					<Route exact path={"/"} component={HomePage} />
-            
-					<Route exact path={"/dashboard"}
-							render={(props) => {
-								if (this.state.user) return <Dashboard {...props} />;
-								else return <Redirect to="/" />;
-							}}
-						/>
+
+					<Route
+						exact
+						path={"/dashboard"}
+						render={(props) => {
+							if (this.state.user)
+								return <Dashboard user={this.state.user} {...props} />;
+							else return <Redirect to="/" />;
+						}}
+					/>
 				</Switch>
 			</>
 		);
 	}
 }
 export default App;
-
