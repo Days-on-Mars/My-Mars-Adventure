@@ -11,6 +11,7 @@ export default class Dashboard extends Component {
       }
     
        handleChange = e => {
+         console.log('checking state in handle change:', this.state.search)
          const name = e.target.name;
          const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
          this.setState({
@@ -48,7 +49,7 @@ export default class Dashboard extends Component {
            || (data.eightToDo.toLowerCase().includes(this.state.search.toLowerCase()))
            || (data.nineToDo.toLowerCase().includes(this.state.search.toLowerCase()))
            || (data.tenToDo.toLowerCase().includes(this.state.search.toLowerCase())))
-           && (data.createdAt.slice(0,10) === this.state.date) 
+           && ((data.createdAt.slice(0,10) === this.state.date) || !this.state.date)
 
         )
         return (

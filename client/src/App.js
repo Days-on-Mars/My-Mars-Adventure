@@ -26,7 +26,6 @@ class App extends React.Component {
 			<>
 				<Navbar user={this.state.user} setUser={this.setUser} />
 				{/* <Login /> */}
-				<BrowserRouter>
 					<Switch>
 						{/*<Route exact path ={'/beers'} render={() => {
               return <beers beerData={this.state.beers}/>
@@ -60,7 +59,6 @@ class App extends React.Component {
           }}
           />*/}
 					</Switch>
-				</BrowserRouter>
 			</>
 		);
 	}
