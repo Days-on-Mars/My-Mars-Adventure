@@ -1,26 +1,84 @@
+/* .HomePageContainer {
+	background-image: url("https://media.giphy.com/media/ehUoahRAu1pIMrEaIk/giphy.gif");
+} */
+
+body {
+	overflow-x: hidden;
+}
+
 .title {
 	font-family: "Tourney", cursive;
 	text-align: center;
-	font-size: 2.5rem;
-	color: rgb(250, 80, 1);
+	font-size: 4.0rem;
+	color: rgb(242, 68, 5);
+	color: #FFFFFF;
+	text-shadow: 0 -2px 10px #ff0, 0 -10px 20px #F24405, 0 -18px 40px #F00;
+	/* color: #FFFFFF; */
 }
 
 .text {
-	/* font-family: "Trueno Light", sans-serif; */
 	font-family: "Rajdhani", sans-serif;
-	padding: 50px;
-	background-color: white;
-	margin: 20px;
-	border-radius: 10px;
+	box-sizing: content-box;
+	width: 75%;
+	padding: 10px;
+	margin: auto;
+	text-align: center;
 }
 
-.HomepageContainer {
-	padding: 30px;
+.martianDefinition {
+	padding: 0px;
+	margin: 50px;
+	font-size: 18px;
+	color: rgb(15, 0, 51);
+	background-color: rgb(83, 104, 166);
+	border-radius: 10px;
+	border: solid;
+	border-color:rgb(242, 68, 5);
+	box-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+
+.martianAbout {
+	padding: 5px;
+	margin: 50px;
+	font-size: 18px;
+	color: rgb(15, 0, 51);
+	background-color: rgb(83, 104, 166);
+	border-radius: 10px;
+	border: solid;
+	border-color:rgb(242, 68, 5);
+	box-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+
+.martianSignup {
+	padding: 5px;
+	margin: 50px;
+	font-size: 18px;
+	color: rgb(15, 0, 51);
+	background-color: rgb(83, 104, 166);
+	border-radius: 10px;
+	border: solid;
+	border-color:rgb(242, 68, 5);
+	box-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+
+.martianLogin {
+	padding: 5px;
+	margin: 50px;
+	font-size: 18px;
+	color: rgb(15, 0, 51);
+	background-color: rgb(83, 104, 166);
+	border-radius: 10px;
+	border: solid;
+	border-color:rgb(242, 68, 5);
+	box-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
 }
 
 .homeLinks {
-	text-decoration: none;
-	color: rgb(250, 80, 1);
+	/* text-decoration-line: underline; */
+	color: rgb(15, 0, 51);
 	font-size: 1.2rem;
 	font-weight: bold;
+	border: solid;
+	border-color:rgb(242, 68, 5);
 }
+

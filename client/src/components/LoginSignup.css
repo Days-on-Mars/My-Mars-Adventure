@@ -1,34 +1,41 @@
 .LoginContainer {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	color: rgb(250, 80, 1);
 	font-family: "Tourney", cursive;
 	font-size: 2rem;
+	color: #FFFFFF;
+	text-shadow: 0 -2px 10px #ff0, 0 -10px 20px #F24405, 0 -18px 40px #F00;
 	background-image: url("https://media.giphy.com/media/l0MYJAzu5RTVSGeiY/giphy.gif");
 	background-size: cover;
 
-	height: 100vh;
+	height: 93vh;
 	width: 100vw;
 }
 
 .SignupContainer {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	color: rgb(250, 80, 1);
 	font-family: "Tourney", cursive;
+	color: #FFFFFF;
+	text-shadow: 0 -2px 10px #ff0, 0 -10px 20px #F24405, 0 -18px 40px #F00;
 	font-size: 2rem;
 	background-image: url("https://media.giphy.com/media/l0K4lUxBzIOeJd1EA/giphy.gif");
 	background-size: cover;
 
-	height: 100vh;
+	height: 93vh;
 	width: 100vw;
 }
 
 form {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 }
 
@@ -41,4 +48,6 @@ form {
 	background-color: rgb(15, 0, 51);
 	color: white;
 	border-style: solid;
+	border-color:rgb(242, 68, 5);
+	box-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
 }

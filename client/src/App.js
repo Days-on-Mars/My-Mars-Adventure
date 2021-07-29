@@ -31,7 +31,7 @@ class App extends React.Component {
               return <beers beerData={this.state.beers}/>
             }} /> */}
 
-          <Route
+         			 <Route
 						exact
 						path="/sign-up"
 						render={(props) => <Signup setUser={this.setUser} {...props} />}
