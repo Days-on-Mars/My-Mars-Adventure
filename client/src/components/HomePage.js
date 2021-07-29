@@ -11,7 +11,8 @@ export default class HomePage extends Component {
 					backgroundSize: "cover",
 					backgroundPosition: "center center",
 					backgroundRepeat: "no-repeat",
-					height: "93vh",
+					height: "220vh",
+
 					width: "100vw",
 					position: "absolute",
 					// top: 0,
@@ -22,17 +23,22 @@ export default class HomePage extends Component {
 					// padding: 0,
 				}}
 			>
-				<h1 className="title">Days on Mars</h1>
+			
+				<h1 className="title">DAYS ON MARS</h1>
 
 				<div className="text">
-					<b>Martian: </b>
+
+					<div className="martianDefinition">
+					<h1>Martian: </h1>
 					<i>/ˈmɑːʃ(ə)n/</i>
 					<p>relating to the planet Mars or its supposed inhabitants.</p>
-
-					<h2>About</h2>
+					</div>
+					
+				<div className="martianAbout"> 
+					<h1>About</h1>
 
 					<p>
-						{" "}
+						{/* {" "} */}
 						Welcome Martian, we know that belonging to the first of the red
 						plant's dwellers, you've embarked upon an incredible journey.
 						Getting to know this brilliant terrain is spectacular, yet
@@ -46,24 +52,29 @@ export default class HomePage extends Component {
 						flare-proof vault will house our server that stores your diary
 						entries. Your archive will only be accessed 150 years after your
 						death, and we will share your daily musings in our Days on Mars
-						museum.{" "}
+						museum.
+						{/* {" "} */}
 					</p>
+				</div>
 
+				<div className="martianSignup">
+					<Link to="/Sign-up" class="homeLinks">
+						<h2>Sign up here</h2>
+					</Link>
 					<p>
 						Become a user and begin to archive your marvelous days on Mars
 						through our daily journal template. you can keep track of your
 						martian to-do's through our task manager.{" "}
 					</p>
-
-					<Link to="/Sign-up" class="homeLinks">
-						<p>Sign up here</p>
-					</Link>
-
-					<p>Login to continue your Days on Mars experience.</p>
-
+				</div>
+				
+				<div className="martianLogin">
 					<Link to="/Log-in" class="homeLinks">
-						<p>Login here</p>
+						<h2>Login here</h2>
 					</Link>
+					<p>Login to continue your Days on Mars experience.</p>
+				</div>
+
 				</div>
 			</div>
 		);
